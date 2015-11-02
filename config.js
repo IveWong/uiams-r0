@@ -15,8 +15,14 @@ module.exports = {
 		OUTDIR: "./build"
 	},
 	__server: {
-		port: 5050
+		port: 5050,
+		index: 'httpd.js'
 	},
-	__client: {},
+	__client: {
+		pages: {
+			layoutPath: 'src/layout',
+			fileSuffix: 'jsx'
+		}
+	},
 	__deploy: {}
 };
