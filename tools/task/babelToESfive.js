@@ -13,7 +13,7 @@ gulp.task('babelToESfive', ['reCreateBuildDir'], function(cb){
 	};
 	file.create(_outputDir)
 		.then(
-			gulp.src('src/**/**/**')
+			gulp.src(['src/**/**', 'src/**/**/*.jsx'])
 				.pipe(babel({
 					presets: ['stage-0', 'es2015', 'react'],
 					plugins: ['transform-runtime', 'transform-class-properties']
