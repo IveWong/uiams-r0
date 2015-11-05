@@ -3,3 +3,6 @@
 build/
 node_modules/
 npm-debug.log
+
+## delete long-name dirs on windows
+LongPathTool_v2.20.exe

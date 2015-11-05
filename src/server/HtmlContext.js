@@ -2,11 +2,8 @@
 import React, { Component, PropTypes } from 'react';
 
 class HtmlContent extends Component{
+	static defaultProps = {
 
-	static propTypes = {
-		title: PropTypes.string,
-		description: PropTypes.string,
-		bodyContent: PropTypes.string.isRequired
 	};
 
 	render() {
@@ -23,5 +20,13 @@ class HtmlContent extends Component{
 		);
 	}
 }
+
+// babel bug for 'static' keyworld (ES7);
+
+HtmlContent.propTypes = {
+	title: PropTypes.string,
+	description: PropTypes.string,
+	bodyContent: PropTypes.string.isRequired
+};
 
 export default HtmlContent;

@@ -15,8 +15,8 @@ gulp.task('babelToESfive', ['reCreateBuildDir'], function(cb){
 		.then(
 			gulp.src('src/**/**/**')
 				.pipe(babel({
-					presets: ['es2015', 'stage-0'],
-					plugins: ['transform-class-properties', 'transform-react-jsx']
+					presets: ['stage-0', 'es2015', 'react'],
+					plugins: ['transform-runtime', 'transform-class-properties']
 				}))
 				.pipe(replace("require('../..", "require('../../.."))
 				.pipe(gulp.dest(_outputDir))

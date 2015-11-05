@@ -1,6 +1,6 @@
 
 import koa from 'koa';
-import reactRender from './reactRender';
+import reactRender from './render';
 import { __server } from '../../config';
 
 const httpd = module.exports = koa();
