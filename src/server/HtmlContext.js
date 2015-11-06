@@ -15,7 +15,7 @@ class HtmlContent extends Component{
 	        <title>{this.props.title}</title>
 	        <meta name="description" content={this.props.description} />
 				</head>
-				<body dangerouslySetInnerHTML={{__html: this.props.body}}></body>
+				<body dangerouslySetInnerHTML={{__html: this.props.bodyContent}}></body>
 			</html>
 		);
 	}

@@ -13,7 +13,7 @@ gulp.task('babelToESfive', ['reCreateBuildDir'], function(cb){
 	};
 	file.create(_outputDir)
 		.then(
-			gulp.src(['src/**/**', 'src/**/**/*.jsx'])
+			gulp.src(['src/**/*.js', 'src/**/**/*.jsx'])
 				.pipe(babel({
 					presets: ['stage-0', 'es2015', 'react'],
 					plugins: ['transform-runtime', 'transform-class-properties']
@@ -21,8 +21,8 @@ gulp.task('babelToESfive', ['reCreateBuildDir'], function(cb){
 				.pipe(replace("require('../..", "require('../../.."))
 				.pipe(gulp.dest(_outputDir))
 				.on('end', function(){
-					console.log('  --> babel client-src finished.')
-					cb();
+					file.copy('src/layout', 'build/production/layout/', {filter: RegExp('.*.jsx')})
+						.then(cb())
 				})
 		);
 })

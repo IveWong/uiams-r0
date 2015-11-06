@@ -12,8 +12,8 @@ const create = (name) => new Promise((resolve, reject) => {
   mkdirp(name, err => err ? reject(err) : resolve());
 });
 
-const copy = (source, dest) => new Promise((resolve, reject) => {
-  ncp(source, dest, err => err ? reject(err) : resolve());
+const copy = (source, dest, opt) => new Promise((resolve, reject) => {
+  ncp(source, dest, opt, err => err ? reject(err) : resolve());
 });
 
 const dele = (source, opt) => new Promise((resolve, reject) => {
