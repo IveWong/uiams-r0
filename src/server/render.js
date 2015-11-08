@@ -5,7 +5,7 @@ import HtmlContext from './HtmlContext';
 import HomePage from '../layout/HomePage';
 
 function render() {
-	return function *(){
+	return function *(rules){
 		var statusCode = 200;
 		var resData = { bodyContent: '' };
 		var context = { hello: 'world'};
@@ -14,15 +14,12 @@ function render() {
 		// 	resData.bodyContent = ReactDOMServer.renderToString(component);
 		// 	console.log("bodyContent is:" + resData.bodyContent);
 		// });
-		var _path = this.path;
-		switch(this.path){
-			case '/home':
-				resData.bodyContent = ReactDOMServer.renderToString(<HomePage />);
-				break;
-		}
-		
-		this.type = 'text/html';
-		this.body = '<!doctype html>\n' + ReactDOMServer.renderToStaticMarkup(React.createElement(HtmlContext, resData));
+		if (rules) {};
+		ComponentPage = yield require('../layout/' + this._page + 'Page');
+		this.body = ComponentPage + HomePage;
+		// resData.bodyContent = ReactDOMServer.renderToString(<ComponentPage />);
+		// this.type = 'text/html';
+		// this.body = '<!doctype html>\n' + ReactDOMServer.renderToStaticMarkup(React.createElement(HtmlContext, resData));
 	}
 }
 

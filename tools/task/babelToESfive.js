@@ -6,11 +6,9 @@ var replace = require('gulp-replace');
 var cfg = require('../../config');
 
 gulp.task('babelToESfive', ['reCreateBuildDir'], function(cb){
+	
 	var _outputDir = 'build/' + cfg.__global.NODE_ENV;
-	var _srcFiles = {
-		client: cfg.__client.pages.layoutPath + '/*.' + cfg.__client.pages.fileSuffix,
-		server: cfg.__server.srcPath + '/*.js'
-	};
+	
 	file.create(_outputDir)
 		.then(
 			gulp.src(['src/**/*.js', 'src/**/**/*.jsx'])

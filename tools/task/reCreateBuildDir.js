@@ -1,9 +1,9 @@
 
 var gulp = require('gulp');
-var file = require('../lib/file');
+var del = require('del');
+var mkdirp = require('mkdirp');
 
-gulp.task('reCreateBuildDir', function(cb){
-	file.dele(['build/*'], { dot: true });
-	file.create('build/');
-	cb();
+gulp.task('reCreateBuildDir', function(){
+	del.sync('build/');
+	mkdirp.sync('build/');
 })

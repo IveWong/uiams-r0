@@ -16,7 +16,7 @@ const httpd = module.exports = koa();
 
 httpd.use(logger());
 
-// httpd.use(router(rules));
+httpd.use(router(rules));
 httpd.use(render());
 
 

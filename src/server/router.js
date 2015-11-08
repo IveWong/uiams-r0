@@ -10,9 +10,14 @@ import ErrorPage from '../layout/ErrorPage';
 
 function router(rules) {
   return function *(next, rules){
-    let firstPathName = this.path.split('/')[1].toLocaleLowerCase();
-    this._page = firstPathName.replace(firstPathName[0], firstPathName[0].toLocaleUpperCase());
-    yield * next
+    let firstPathName = this.path.split('/')[1];
+    if (firstPathName == '') {
+    	this._page = 'Index';
+    } else{
+    	this._page = firstPathName.toLocaleLowerCase().replace(firstPathName[0], firstPathName[0].toLocaleUpperCase());
+    }
+    
+    yield next;
   }
 }
 
