@@ -12,9 +12,10 @@ function router(rules) {
   return function *(next, rules){
     let firstPathName = this.path.split('/')[1];
     if (firstPathName == '') {
-    	this._page = 'Index';
+    	this._firstarg = 'index';
     } else{
-    	this._page = firstPathName.toLocaleLowerCase().replace(firstPathName[0], firstPathName[0].toLocaleUpperCase());
+    	// this._page = firstPathName.toLocaleLowerCase().replace(firstPathName[0], firstPathName[0].toLocaleUpperCase());
+    	this._firstarg = firstPathName.toLocaleLowerCase();
     }
     
     yield next;

@@ -7,7 +7,7 @@ import NotFoundPage from '../layout/NotFoundPage';
 import SignInPage from '../layout/SignInPage';
 import RegisterPage from '../layout/RegisterPage';
 
-const rules = {
+export default {
 	home: HomePage,
 	index: IndexPage,
 	contact: ContactPage,
@@ -16,5 +16,3 @@ const rules = {
 	pagenotfound: NotFoundPage,
 	pageerror: ErrorPage
 };
-
-export default rules;
