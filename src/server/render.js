@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import HtmlContext from './HtmlContext';
-import HomePage from '../layout/HomePage';
+import rules from './rules';
 
 function render() {
 	return function *(rules){
@@ -14,9 +14,13 @@ function render() {
 		// 	resData.bodyContent = ReactDOMServer.renderToString(component);
 		// 	console.log("bodyContent is:" + resData.bodyContent);
 		// });
-		if (rules) {};
-		ComponentPage = yield require('../layout/' + this._page + 'Page');
-		this.body = ComponentPage + HomePage;
+		if (rules) {
+			for(let key in rules){
+				this._page = this._page.toLocaleLowerCase() === key.toLocaleLowerCase() ? rules[key] : rules.pagenotfound;
+			}
+		}
+		// this.body = this._page;
+		this.body = 'rules.pageerrd';
 		// resData.bodyContent = ReactDOMServer.renderToString(<ComponentPage />);
 		// this.type = 'text/html';
 		// this.body = '<!doctype html>\n' + ReactDOMServer.renderToStaticMarkup(React.createElement(HtmlContext, resData));

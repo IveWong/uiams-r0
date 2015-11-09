@@ -12,7 +12,8 @@ module.exports = {
 		NODE_ENV: !isRelease ? "development" : "production"
 	},
 	__gulp: {
-		OUTDIR: "./build"
+		OUTDIR: "./build",
+		splitLog: false									//是否将access信息跟debug信息分开两个窗口
 	},
 	__server: {
 		port: 5050,
