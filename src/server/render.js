@@ -15,13 +15,13 @@ import RegisterPage from '../layout/RegisterPage';
 function render() {
 	return function *(rules){
 		var statusCode = 200;
-		var resData = { bodyContent: '' };
+		var resData = { 
+			bodyContent: '',
+			title: '',
+			description: '',
+			extendsCSS: ''
+		};
 		var context = { hello: 'world'};
-		// yield router.dispatch({ path: this.request.url }, (state, component) => {
-		// 	console.log(component.render);
-		// 	resData.bodyContent = ReactDOMServer.renderToString(component);
-		// 	console.log("bodyContent is:" + resData.bodyContent);
-		// });
 
 		var rule = {
 			home: HomePage,
@@ -40,14 +40,9 @@ function render() {
 			this.state = 404;
 		}
 		
-		// if (rules) {
-		// 	this.body = context['hello'];
-		// 	// for(let key of rules){
-		// 	// 	this.body = this._firstarg === key.toLocaleLowerCase() ? rules[key] : rules.pagenotfound;
-		// 	// }
-		// }
-		// this.body = rules['home'];
-		
+		resData.title = ComponentPage.pageInfo.title;
+		resData.description = ComponentPage.pageInfo.description;
+		resData.extendsCSS = ComponentPage.pageInfo.stylesheet;
 		resData.bodyContent = ReactDOMServer.renderToString(<ComponentPage />);
 		this.type = 'text/html';
 		this.body = '<!doctype html>\n' + ReactDOMServer.renderToStaticMarkup(React.createElement(HtmlContext, resData));

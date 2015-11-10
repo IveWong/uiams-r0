@@ -2,9 +2,13 @@
 import React, { Component, PropTypes } from 'react';
 
 class HtmlContent extends Component{
-	static defaultProps = {
-
+	static propTypes = {
+		title: PropTypes.string,
+		description: PropTypes.string,
+		bodyContent: PropTypes.string.isRequired,
+		extendsCSS: PropTypes.string
 	};
+	static defaultProps = {};
 
 	render() {
 		return (
@@ -14,19 +18,13 @@ class HtmlContent extends Component{
 	        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 	        <title>{this.props.title}</title>
 	        <meta name="description" content={this.props.description} />
+	        <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css"/>
+	        <link rel="stylesheet" type="text/css" href={this.props.extendsCSS}/>
 				</head>
 				<body dangerouslySetInnerHTML={{__html: this.props.bodyContent}}></body>
 			</html>
 		);
 	}
 }
-
-// babel bug for 'static' keyworld (ES7);
-
-HtmlContent.propTypes = {
-	title: PropTypes.string,
-	description: PropTypes.string,
-	bodyContent: PropTypes.string.isRequired
-};
 
 export default HtmlContent;

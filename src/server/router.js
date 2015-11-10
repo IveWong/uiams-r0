@@ -14,7 +14,6 @@ function router(rules) {
     if (firstPathName == '') {
     	this._firstarg = 'index';
     } else{
-    	// this._page = firstPathName.toLocaleLowerCase().replace(firstPathName[0], firstPathName[0].toLocaleUpperCase());
     	this._firstarg = firstPathName.toLocaleLowerCase();
     }
     
