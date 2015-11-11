@@ -37,16 +37,8 @@ function render() {
 			var ComponentPage = rule[this._firstarg];
 		} else {
 			var ComponentPage = rule['pagenotfound'];
-			this.state = 404;
+			this.status = 404;
 		}
-		
-		// if (rules) {
-		// 	this.body = context['hello'];
-		// 	// for(let key of rules){
-		// 	// 	this.body = this._firstarg === key.toLocaleLowerCase() ? rules[key] : rules.pagenotfound;
-		// 	// }
-		// }
-		// this.body = rules['home'];
 		
 		resData.bodyContent = ReactDOMServer.renderToString(<ComponentPage />);
 		this.type = 'text/html';
