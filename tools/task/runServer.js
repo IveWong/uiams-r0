@@ -19,8 +19,8 @@ gulp.task('runServer', ['build'], function(cb){
       process.stdout.write(chalk.green(data));
     });
     server.stderr.on('data', data => process.stderr.write(data));
-    server.on('error', err => reject(err));
-    process.on('exit', () => server.kill('SIGTERM'));
+    // server.on('error', err => reject(err));
+    // process.on('exit', () => server.kill('SIGTERM'));
     return server;
   }
 
