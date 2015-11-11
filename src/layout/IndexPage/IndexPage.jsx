@@ -3,9 +3,6 @@ import React, { Component, PropTypes } from 'react';
 import NavTop from '../../components/NavTop';
 
 class IndexPage extends Component{
-<<<<<<< HEAD
-	
-=======
 	static pageInfo = {
 		title: 'UIAMS • Welcome',
 		description: 'UI auto management system.',
@@ -14,7 +11,6 @@ class IndexPage extends Component{
 	static propTypes = {};
 	static defaultProps = {};
 
->>>>>>> 326a832e2d0433feeb1a0fe9206fe326b1550a82
 	render() {
 		return (
 			<div class="">

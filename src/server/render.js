@@ -40,12 +40,9 @@ function render() {
 			this.status = 404;
 		}
 		
-<<<<<<< HEAD
-=======
 		resData.title = ComponentPage.pageInfo.title;
 		resData.description = ComponentPage.pageInfo.description;
 		resData.extendsCSS = ComponentPage.pageInfo.stylesheet;
->>>>>>> 326a832e2d0433feeb1a0fe9206fe326b1550a82
 		resData.bodyContent = ReactDOMServer.renderToString(<ComponentPage />);
 		this.type = 'text/html';
 		this.body = '<!doctype html>\n' + ReactDOMServer.renderToStaticMarkup(React.createElement(HtmlContext, resData));

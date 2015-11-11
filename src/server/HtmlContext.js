@@ -5,12 +5,8 @@ class HtmlContent extends Component{
 	static propTypes = {
 		title: PropTypes.string,
 		description: PropTypes.string,
-<<<<<<< HEAD
-		bodyContent: PropTypes.string.isRequired
-=======
 		bodyContent: PropTypes.string.isRequired,
 		extendsCSS: PropTypes.string
->>>>>>> 326a832e2d0433feeb1a0fe9206fe326b1550a82
 	};
 	static defaultProps = {};
 
