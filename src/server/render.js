@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import HtmlContext from './HtmlContext';
-import commonpurefuc from 'commonpurefuc';
+import { testUA } from 'commonpurefuc';
 // import rules from './rules';
 
 import HomePage from '../layout/HomePage';
@@ -44,8 +44,8 @@ function render() {
 		resData.title = ComponentPage.pageInfo.title;
 		resData.description = ComponentPage.pageInfo.description;
 		resData.extendsCSS = ComponentPage.pageInfo.stylesheet;
-		// resData.bodyContent = ReactDOMServer.renderToString(<ComponentPage />);
-		resData.bodyContent = commonpurefuc.parse(this.header['user-agent']);
+		resData.bodyContent = ReactDOMServer.renderToString(<ComponentPage />);
+		// resData.bodyContent = JSON.stringify(testUA.parse(this.header['user-agent']));
 		this.type = 'text/html';
 		this.body = '<!doctype html>\n' + ReactDOMServer.renderToStaticMarkup(React.createElement(HtmlContext, resData));
 	}

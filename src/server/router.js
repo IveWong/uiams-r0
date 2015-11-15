@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Router from 'react-routing/lib/Router';
 import HtmlContext from './HtmlContext';
 // import router from 'koa-router';
 import HomePage from '../layout/HomePage';
