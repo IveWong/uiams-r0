@@ -27,6 +27,7 @@
   "devDependencies": {
     "babel-core": "^6.0.20",
     "babel-plugin-syntax-async-functions": "^6.0.14",
+    "babel-plugin-syntax-class-properties": "^6.1.18",
     "babel-plugin-transform-async-to-generator": "^6.0.14",
     "babel-plugin-transform-class-properties": "^6.0.14",
     "babel-plugin-transform-runtime": "^6.0.16",
@@ -35,6 +36,9 @@
     "babel-preset-stage-0": "^6.0.15",
     "babel-preset-stage-1": "^6.0.15",
     "babel-runtime": "^6.0.14",
+    "babelify": "^7.2.0",
+    "bluebird": "^3.0.5",
+    "browserify": "^12.0.1",
     "chalk": "^1.1.1",
     "debug": "^2.2.0",
     "del": "^2.0.2",
@@ -46,7 +50,9 @@
     "gulp-watch": "^4.3.5",
     "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
-    "require-dir": "^0.3.0"
+    "require-dir": "^0.3.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.1"
   },
   "scripts": {
     "start": "gulp runServer",

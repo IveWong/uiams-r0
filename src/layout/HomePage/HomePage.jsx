@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import NavTop from '../../components/NavTop';
+import NavTop from '../../../components/NavTop';
 
 class HomePage extends Component{
 

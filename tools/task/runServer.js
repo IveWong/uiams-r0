@@ -4,11 +4,13 @@ var cp = require('child_process');
 var cfg = require('../../config');
 var chalk = require('chalk');
 
-gulp.task('runServer', ['build'], function(cb){
+gulp.task('runServer', ['reCreateBuildDir', 'babelServer', 'babelClient'], function(cb){
 	function start() {
+    var _index = cfg.__global.DEBUG ? cfg.__server.index : cfg.__server.destFileName + '.js';
+    var _servd = cfg.__gulp.OUTDIR + cfg.__global.NODE_ENV + '/' + cfg.__server.srcDirName + '/' + _index;
     var server = cp.spawn(
       'node',
-      ['build/' + cfg.__global.NODE_ENV + '/server/' + cfg.__global.DEBUG ? cfg.__server.destFileName + '.js' : cfg.__server.index],
+      [_servd],
       {
         env: Object.assign({ NODE_ENV: cfg.__global.NODE_ENV }, process.env),
         silent: false,

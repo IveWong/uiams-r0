@@ -5,8 +5,8 @@ import HtmlContext from './HtmlContext';
 import { testUA } from 'commonpurefuc';
 // import rules from './rules';
 
-import HomePage from '../layout/HomePage';
 import IndexPage from '../layout/IndexPage';
+import HomePage from '../layout/HomePage';
 import ContactPage from '../layout/ContactPage';
 import ErrorPage from '../layout/ErrorPage';
 import NotFoundPage from '../layout/NotFoundPage';

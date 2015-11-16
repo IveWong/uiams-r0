@@ -1,6 +1,6 @@
 
 import React, { Component, PropTypes } from 'react';
-import NavTop from '../../components/NavTop';
+import NavTop from '../../../components/NavTop';
 
 class IndexPage extends Component{
 	static pageInfo = {

@@ -9,6 +9,9 @@ module.exports = {
 		WATCH: true,
 		NODE_ENV: !isRelease ? "development" : "production"
 	},
+	__project: {
+		foundation: ['react']
+	},
 	__gulp: {
 		splitLog: false,									//是否将access信息跟debug信息分开两个窗口
 		OUTDIR: "build/",
@@ -17,12 +20,14 @@ module.exports = {
 	},
 	__server: {
 		port: 5050,
-		index: 'httpd.js',
-		srcDirName: 'server',
-		destFileName: 'serverd'
+		outDirName: 'server',
+		indexFile: 'httpd.js',
+		srcDir: 'src/server/',
+		destFile: 'serverd.js'
 	},
 	__client: {
 		outDirName: 'client',
+		destFile: 'client.js',
 		libDir: 'lib',
 		pages: {
 			layoutDirName: 'layout',
