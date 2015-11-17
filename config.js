@@ -7,16 +7,19 @@ module.exports = {
 		DEBUG: !isRelease,
 		VERBOSE: isVerbose,
 		WATCH: true,
-		NODE_ENV: !isRelease ? "development" : "production"
+		NODE_ENV: !isRelease ? "development" : "production",
+		PORT: {
+			default: 5050
+		}
 	},
 	__project: {
-		foundation: ['react']
-	},
-	__gulp: {
-		splitLog: false,									//是否将access信息跟debug信息分开两个窗口
+		foundation: ['react'],
 		OUTDIR: "build/",
 		SRCDIR: "src/",
 		DOCDIR: "doc/"
+	},
+	__task: {
+		splitLog: false,									//是否将access信息跟debug信息分开两个窗口
 	},
 	__server: {
 		port: 5050,

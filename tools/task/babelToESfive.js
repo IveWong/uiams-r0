@@ -1,5 +1,6 @@
 
 var gulp = require('gulp');
+var webpack = require('webpack');
 var watchify = require('watchify');
 var browserify = require('browserify');
 var babelify = require('babelify');

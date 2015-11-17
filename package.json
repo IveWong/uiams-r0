@@ -52,13 +52,15 @@
     "ncp": "^2.0.0",
     "require-dir": "^0.3.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.6.1"
+    "watchify": "^3.6.1",
+    "webpack": "^1.12.6"
   },
   "scripts": {
     "start": "gulp runServer",
     "build": "gulp build",
     "test": "gulp test",
-    "release": "gulp build --release"
+    "release": "gulp build --release",
+    "deploy": "gulp deploy --release"
   },
   "license": "GNU"
 }

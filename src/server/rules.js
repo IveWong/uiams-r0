@@ -1,11 +1,21 @@
 
-import HomePage from '../layout/HomePage';
-import IndexPage from '../layout/IndexPage';
-import ContactPage from '../layout/ContactPage';
-import ErrorPage from '../layout/ErrorPage';
-import NotFoundPage from '../layout/NotFoundPage';
-import SignInPage from '../layout/SignInPage';
-import RegisterPage from '../layout/RegisterPage';
+// import HomePage from '../layout/HomePage';
+// import IndexPage from '../layout/IndexPage';
+// import ContactPage from '../layout/ContactPage';
+// import ErrorPage from '../layout/ErrorPage';
+// import NotFoundPage from '../layout/NotFoundPage';
+// import SignInPage from '../layout/SignInPage';
+// import RegisterPage from '../layout/RegisterPage';
+
+import {
+	IndexPage,
+	HomePage,
+	ContactPage,
+	ErrorPage,
+	NotFoundPage,
+	SignInPage,
+	RegisterPage
+} from '../client/client';
 
 export default {
 	home: HomePage,
